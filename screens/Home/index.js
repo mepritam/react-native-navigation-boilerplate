@@ -38,7 +38,7 @@ export default class Home extends Component{
           source={require("../../assets/images/redux-min.png")} 
           />
         </View>
-        <Text style={styles.title}> React Native Boiler Plate </Text>
+        <Text style={styles.title}> Spinch </Text>
       </View>
       
     );
@@ -70,6 +70,6 @@ const styles = StyleSheet.create({
   title:{
     fontFamily:'Caveat-Regular',
     color:'white',
-    fontSize:25
+    fontSize:40
   }
 });
