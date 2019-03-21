@@ -3,18 +3,36 @@
  */
 
 import { Navigation } from "react-native-navigation";
-import App from './App';
 
-// register component
-Navigation.registerComponent(`App`, () => App);
+import { registerScreens } from "./navigation/screens";
+
+// register screens
+registerScreens();
 
 // set up component naviagtion 
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {
-      component: {
-        name: "App"
+      stack: {
+        id: 'App',
+        children: [
+          {
+            component: {
+              name: 'Home',
+              options: {
+                topBar: {
+                  visible: false,
+                  drawBehind: true
+                },
+                statusBar: {
+                  drawBehind: false,
+                  backgroundColor: 'white'
+                }
+              }
+            }
+          },
+        ],
       }
-    }
+    },
   });
 });
