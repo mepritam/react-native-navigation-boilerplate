@@ -26,7 +26,7 @@ Navigation.events().registerAppLaunchedListener(() => {
                 },
                 statusBar: {
                   drawBehind: false,
-                  backgroundColor: 'white'
+                  backgroundColor: 'dark'
                 }
               }
             }
