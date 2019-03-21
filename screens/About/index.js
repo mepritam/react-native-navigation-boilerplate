@@ -4,12 +4,21 @@ import { Navigation } from 'react-native-navigation';
 
 
 export default class About extends Component{
+
+gotoScreen(screenName){
+    Navigation.push(this.props.componentId,{
+        component:{
+            name: screenName
+        }
+    })
+
+}  
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to Boilerplate AboutScreen</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Button title={'Click'} onPress={()=>{}} />
+        <Button title={'Click'} onPress={()=>{Navigation.pop(this.props.componentId)}} />
       </View>
     );
   }

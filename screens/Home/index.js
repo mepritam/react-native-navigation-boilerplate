@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, Image} from 'react-native';
 import { Navigation } from 'react-native-navigation';
 
 
@@ -20,9 +20,10 @@ export default class Home extends Component{
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to Boilerplate HomeScreen</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Button title={'Click'} onPress={()=>{this.gotoScreen('About')}} />
+        <Image style={styles.logos} source={require("../../assets/images/react-min.png")} />
+        <Image style={styles.logos} source={require("../../assets/images/navigation-min.png")} />
+        <Image style={styles.logos} source={require("../../assets/images/redux-min.png")} />
+
       </View>
     );
   }
@@ -34,6 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
+    flexDirection:'row'
   },
   welcome: {
     fontSize: 20,
@@ -45,4 +47,9 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  logos:{
+      width:50,
+      height:50,
+      margin:5
+  }
 });
