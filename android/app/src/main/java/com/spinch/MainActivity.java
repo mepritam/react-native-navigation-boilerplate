@@ -1,4 +1,4 @@
-package com.boilerplate;
+package com.spinch;
 
 import com.reactnativenavigation.NavigationActivity;
 

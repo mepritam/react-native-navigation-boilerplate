@@ -2,12 +2,18 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button, Image} from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import * as Animatable from 'react-native-animatable';
-
-
-export default class Home extends Component{
+import { createStructuredSelector } from "reselect"; 
+import { connect } from "react-redux";
+import { loadWeather } from "./actions";
+import { weatherSelector } from "./selectors";
+class Home extends Component{
 
   constructor(props){
       super(props)
+  }
+
+  componentDidMount(){
+    this.props.doloadWeather()
   }
 
   gotoScreen(screenName){
@@ -19,6 +25,7 @@ export default class Home extends Component{
   }
 
   render() {
+    console.log('Hello',this.props.user)
     return (
       <View style={styles.container}>
         <View style={{flexDirection:'row'}}>
@@ -44,6 +51,25 @@ export default class Home extends Component{
     );
   }
 }
+
+const mapStateToProps = createStructuredSelector({
+  user: weatherSelector()
+});
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    doloadWeather: data => {
+      dispatch(loadWeather(data));
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
+
 
 const styles = StyleSheet.create({
   container: {

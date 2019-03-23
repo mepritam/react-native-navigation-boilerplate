@@ -1,4 +1,4 @@
-rootProject.name = 'Boilerplate'
+rootProject.name = 'Spinch'
 
 include ':app'
 include ':react-native-navigation'
