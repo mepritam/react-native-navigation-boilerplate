@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Button, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View, Button, Image, ActivityIndicator} from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import * as Animatable from 'react-native-animatable';
 import { createStructuredSelector } from "reselect"; 
 import { connect } from "react-redux";
 import { loadWeather } from "./actions";
-import { weatherSelector } from "./selectors";
+import { weatherSelector, getWeather } from "./selectors";
 class Home extends Component{
 
   constructor(props){
@@ -13,7 +13,7 @@ class Home extends Component{
   }
 
   componentDidMount(){
-    this.props.doloadWeather()
+    this.props.doloadWeather("Mumbai")
   }
 
   gotoScreen(screenName){
@@ -25,7 +25,7 @@ class Home extends Component{
   }
 
   render() {
-    console.log('Hello',this.props.user)
+    console.log('Hello',this.props.weather)
     return (
       <View style={styles.container}>
         <View style={{flexDirection:'row'}}>
@@ -46,6 +46,17 @@ class Home extends Component{
           />
         </View>
         <Text style={styles.title}> Spinch </Text>
+        {this.props.weather ?
+          <View>
+            <Text style={{color:'white',marginTop:30,fontFamily:'Caveat-Regular',textAlign:'center'}}> {this.props.weather.name}</Text>
+            <Text style={{color:'white',fontSize:30,fontFamily:'Caveat-Regular', textAlign:'center'}}> {this.props.weather.main.temp -  273.15}° </Text>
+          </View>
+          :
+          <View>
+            <ActivityIndicator color={'white'} />
+          </View>
+         }
+        
       </View>
       
     );
@@ -53,7 +64,7 @@ class Home extends Component{
 }
 
 const mapStateToProps = createStructuredSelector({
-  user: weatherSelector()
+  weather: getWeather()
 });
 
 

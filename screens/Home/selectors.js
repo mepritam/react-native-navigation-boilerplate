@@ -7,4 +7,8 @@ const weatherSelector = () =>
     state => state.toJS()
   );
 
-export { weatherSelector }
+const getWeather = () =>
+  createSelector(selectWeather, state => state.get('weather'));
+
+
+export { weatherSelector, getWeather }

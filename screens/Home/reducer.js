@@ -2,16 +2,15 @@ import { LOAD_WEATHER, LOAD_WEATHER_SUCCESS } from "./constants";
 import { fromJS } from "immutable";
 
 export const initialState = fromJS({
-  users: '',
-  tester: ''
+  weather: '',
 });
 
 function weatherLoadReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_WEATHER:
-      return state.set("users", "Pritam");
+      return state;
     case LOAD_WEATHER_SUCCESS:
-      return state.set("users", "Pritam Sadhu");
+      return state.set("weather", action.result);
     default:
       return state;
   }
