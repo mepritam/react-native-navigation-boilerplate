@@ -13,7 +13,6 @@ class Home extends Component{
   }
 
   componentDidMount(){
-    this.props.doloadWeather("Mumbai")
   }
 
   gotoScreen(screenName){
@@ -46,16 +45,6 @@ class Home extends Component{
           />
         </View>
         <Text style={styles.title}> Spinch </Text>
-        {this.props.weather ?
-          <View>
-            <Text style={{color:'white',marginTop:30,fontFamily:'Caveat-Regular',textAlign:'center'}}> {this.props.weather.name}</Text>
-            <Text style={{color:'white',fontSize:30,fontFamily:'Caveat-Regular', textAlign:'center'}}> {this.props.weather.main.temp -  273.15}° </Text>
-          </View>
-          :
-          <View>
-            <ActivityIndicator color={'white'} />
-          </View>
-         }
         
       </View>
       
@@ -77,7 +66,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(
-  mapStateToProps,
+  "",
   mapDispatchToProps
 )(Home);
 

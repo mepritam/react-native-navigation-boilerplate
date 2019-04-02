@@ -8,7 +8,6 @@ import{
 } from "redux-saga/effects";
 
 import { LOAD_WEATHER, LOAD_WEATHER_SUCCESS  } from "./constants";
-import {API_GATEWAY,API_KEY} from "react-native-dotenv";
 import axios from "axios";
 
 export default function* loadWeather(){
