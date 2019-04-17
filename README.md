@@ -23,8 +23,8 @@ Yes a beginner and professional both can start with this boilerplate. But it is 
  - run `npm install` inside this repo folder.
  - Definitely you want to change the default project name. So don't worry  you can use [react-native-rename](https://github.com/junedomingo/react-native-rename#readme)
  - Inside screen folder you can create your screen (example Home is there)
- - To use this screen in this application you need to first register that with react-native-navigation. To do so open `navigation/screens.js` and import add your screen like this `Navigation.registerComponent('About', () => require('../screens/About').default);`. If you want to use redux with this screen then you need some little bit modification. Instead of registerComponent you have to use registerComponentWithRedux. `Navigation.registerComponentWithRedux('About', () => require('../screens/About').default, Provider, store);`If above steps are done then you are good to go in the next steps.
- - This boilerplate like other RN app also initially hit `index.js` first. You can change you initial screen here under `Navigation.events().registerAppLaunchedListener(() => {}).` Make sure you have little bit understanding of react-native-navigation or you can user this [docs](https://wix.github.io/react-native-navigation/#/).
+ - To use this screen in this application you need to first register that with react-native-navigation. To do so open `navigation/screens.js` and import and add your screen like this `Navigation.registerComponent('About', () => require('../screens/About').default);`. If you want to use redux with this screen then you need some little bit modification. Instead of registerComponent you have to use registerComponentWithRedux. `Navigation.registerComponentWithRedux('About', () => require('../screens/About').default, Provider, store);`If above steps are done then you are good to go in the next steps.
+ - This boilerplate is like other RN app  and also initially hit `index.js` first. You can change you initial screen here under `Navigation.events().registerAppLaunchedListener(() => {}).` Make sure you have little bit understanding of react-native-navigation or you can user this [docs](https://wix.github.io/react-native-navigation/#/).
  
  **How to start (Advanced setup)**
  
@@ -34,4 +34,4 @@ Yes a beginner and professional both can start with this boilerplate. But it is 
 ![Spinch](https://i.ibb.co/cvS1PQv/Screenshot-20190417-185350-1.jpg)
 
 **Contribute**
-This is open source project. Any idea from you guys are always welcome. You are free to fork this repo and create a PR if you have done good changes or have added new packages.
+This is an open source project. Any idea from you guys are always welcome. You are free to fork this repo and create a PR if you have done a good changes or have added new packages.
